@@ -2,6 +2,8 @@
 
 A personal satellite archaeology project — looking for buried sites from orbit, starting with Dholavira.
 
+🔗 **Live site:** https://manunibhavsar.github.io/satellite-archaeology/
+
 This is a curiosity-driven experiment, not a professional survey. It grew out of a fascination with the idea (inspired by Albert Lin's work) that you can look for traces of buried archaeology without ever picking up a shovel — just by reading how the ground and the vegetation above it behave in satellite imagery.
 
 ## What it does
