@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What the Soil Remembers — Reading the Earth From Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-home">
+
+  <nav class="topnav">
+    <a class="brand" href="index.html">◴ WHAT THE SOIL&nbsp;REMEMBERS</a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="map.html">Survey Map</a>
+      <a href="history.html">History</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-contours"></div>
+    <div class="hero-compass"></div>
+    <div class="hero-scan"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-vignette"></div>
+    <span class="corner corner-tl"></span>
+    <span class="corner corner-tr"></span>
+    <span class="corner corner-bl"></span>
+    <span class="corner corner-br"></span>
+    <div class="hero-plate">PLATE I · KHADIR BET</div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">An Archive of Buried Things · Phase I</p>
+      <h1 class="hero-title">What the Soil<br><em>Remembers</em></h1>
+      <p class="hero-epigraph">
+        "The ground keeps every secret it is given —<br>
+        you only have to learn how to read it."
+      </p>
+      <p class="hero-lead">
+        Buried walls and forgotten channels never truly vanish. They linger as faint
+        marks in the soil and the plants above them, invisible from the ground yet
+        legible from orbit. This is a search for those marks, across the desert island
+        of one of the world's oldest cities.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="map.html">Enter the survey →</a>
+        <a class="btn btn-ghost" href="history.html">Read the history</a>
+      </div>
+    </div>
+    <div class="hero-coords">
+      <span>23.8877° N</span><span>70.2102° E</span><span>DHOLAVIRA</span>
+    </div>
+  </header>
+
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-num">I</span>
+      <h2>What started this</h2>
+    </div>
+    <div class="prose">
+      <p class="drop">
+        The explorer Albert Lin spent years searching for lost tombs and cities not with
+        a shovel, but with satellites — finding what was hidden by reading the surface of
+        the Earth instead of digging blindly into it. That single idea is the seed of this
+        project: that you need not stand on the ground, or even on the right continent, to
+        find the traces of the people who came before.
+      </p>
+      <p>
+        For all its fame, the land around <strong>Dholavira</strong> — a 4,500-year-old
+        Harappan city in the Rann of Kutch — remains barely surveyed. The excavated city is
+        only its heart. What surrounds it — the outer settlements, the field systems, the
+        water works that made desert life possible — lies largely unmapped, waiting. This
+        project asks one quiet question: <em>can free satellite data tell us where to look
+        next?</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt reveal">
+    <div class="section-head">
+      <span class="section-num">II</span>
+      <h2>What it sets out to do</h2>
+    </div>
+    <div class="aim-grid">
+      <div class="aim-card">
+        <span class="aim-roman">i</span>
+        <h3>Detect</h3>
+        <p>Read free Sentinel-2 imagery for vegetation, moisture and soil — and mark the
+        places that stand apart from everything around them.</p>
+      </div>
+      <div class="aim-card">
+        <span class="aim-roman">ii</span>
+        <h3>Verify</h3>
+        <p>Rule out the ordinary — farms, salt, roads, geology — and keep only what
+        endures across years and agrees across signals.</p>
+      </div>
+      <div class="aim-card">
+        <span class="aim-roman">iii</span>
+        <h3>Map</h3>
+        <p>Lay the survivors on an honest map, each marked plainly as a possibility for
+        the spade to test — never as a discovery already made.</p>
+      </div>
+      <div class="aim-card">
+        <span class="aim-roman">iv</span>
+        <h3>Grow</h3>
+        <p>Reach outward, region by region — beginning here in Gujarat, built to travel
+        anywhere the land still holds a story worth reading.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-num">III</span>
+      <h2>How the reading is done</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><span class="flow-n">1</span><p>A buried structure quietly alters the soil and water above it</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-n">2</span><p>The plants that grow there turn faintly weaker, or stronger</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-n">3</span><p>From orbit, satellites measure that difference in light</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-n">4</span><p>Statistics lift the truly unusual from the ordinary noise</p></div>
+    </div>
+    <p class="prose method-note">
+      Each candidate is found by measuring how far a place departs from its own
+      surroundings — more than two standard deviations from the local normal — then
+      filtered against land cover to rule out farmland, water and built-up ground, and
+      weighed against every ordinary explanation. The method follows the approach
+      professional satellite archaeology uses; the honesty about its limits is what
+      earns it trust.
+    </p>
+  </section>
+
+  <section class="cta reveal">
+    <div class="cta-rule"></div>
+    <h2>See what the satellites found</h2>
+    <p>Ten candidate marks within three kilometres of Dholavira — plotted alongside the
+       known city itself, which anchors the survey as a reference point.</p>
+    <a class="btn btn-primary" href="map.html">Open the survey map →</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="foot-col">
+      <span class="foot-brand">What the Soil Remembers</span>
+      <span class="foot-sub">Satellite archaeology, built from scratch</span>
+    </div>
+    <div class="foot-col foot-meta">
+      <span>Project: satellite-archaeology</span>
+      <span>Data: Sentinel-2 · Google Earth Engine</span>
+      <span class="foot-links">
+        <a href="https://www.linkedin.com/in/manuni-b-877329381" target="_blank" rel="noopener">in&nbsp;LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const KEY = 'wtsr-theme';
+      const root = document.documentElement;
+      function apply(mode) {
+        if (mode === 'dark') root.setAttribute('data-theme', 'dark');
+        else if (mode === 'light') root.setAttribute('data-theme', 'light');
+        else root.removeAttribute('data-theme');
+      }
+      const saved = localStorage.getItem(KEY);
+      apply(saved || 'auto');
+      window.addEventListener('DOMContentLoaded', function () {
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.addEventListener('click', function () {
+          const isDark = root.getAttribute('data-theme') === 'dark'
+            || (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem(KEY, next);
+          apply(next);
+        });
+        const obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      });
+    })();
+  </script>
+
+</body>
+</html>

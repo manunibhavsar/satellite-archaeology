@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dholavira — Satellite Anomaly Survey</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-map">
+
+  <nav class="topnav topnav-overlay">
+    <a class="brand" href="index.html">◴ WHAT THE SOIL&nbsp;REMEMBERS</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="map.html" class="active">Survey Map</a>
+      <a href="history.html">History</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+    </div>
+  </nav>
+
+  <header class="panel">
+    <div class="panel-inner">
+      <p class="eyebrow">Satellite Remote Sensing · Living Atlas</p>
+      <h1 id="region-title">Dholavira Anomaly Survey</h1>
+      <p class="region-blurb" id="region-blurb">Harappan city, Khadir Bet, Rann of Kutch — Gujarat</p>
+
+      <div class="region-picker">
+        <label for="region-select">Survey area</label>
+        <select id="region-select" aria-label="Choose survey area"></select>
+      </div>
+
+      <p class="sub">Vegetation-index anomalies detected from Sentinel-2 imagery. Each marker is a candidate for ground investigation — not a confirmed find.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" id="stat-candidates">—</span>
+          <span class="stat-label">candidates</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2&#963;</span>
+          <span class="stat-label">z-score threshold</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">spectral indices</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-row"><span class="dot dot-site"></span> Documented site</div>
+        <div class="legend-row"><span class="dot dot-cand"></span> Candidate anomaly (unverified)</div>
+      </div>
+
+      <p class="method">Method: NDVI, NDWI &amp; soil-index anomalies (local z-score &gt; 2σ), filtered against ESA WorldCover land cover to exclude cropland, water and built-up ground. Candidates shown are clustered features (10+ pixels) within 3&nbsp;km of the known site, from Sentinel-2 dry-season imagery (Nov 2023–Mar 2024).</p>
+    </div>
+    <footer class="panel-footer">
+      <span>satellite-archaeology</span>
+      <a class="foot-li" href="https://www.linkedin.com/in/manuni-b-877329381" target="_blank" rel="noopener">in&nbsp;LinkedIn</a>
+    </footer>
+  </header>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="map.js"></script>
+  <script>
+    (function () {
+      const KEY = 'wtsr-theme';
+      const root = document.documentElement;
+      function apply(mode) {
+        if (mode === 'dark') root.setAttribute('data-theme', 'dark');
+        else if (mode === 'light') root.setAttribute('data-theme', 'light');
+        else root.removeAttribute('data-theme');
+      }
+      // initial: saved choice, else follow system
+      const saved = localStorage.getItem(KEY);
+      apply(saved || 'auto');
+      window.addEventListener('DOMContentLoaded', function () {
+        const btn = document.getElementById('themeToggle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          const isDark = root.getAttribute('data-theme') === 'dark'
+            || (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          const next = isDark ? 'light' : 'dark';
+          localStorage.setItem(KEY, next);
+          apply(next);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
